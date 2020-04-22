@@ -44,10 +44,10 @@ void DeleteNode(int n)
     for (i = 0; i < n - 2; i++)
     {
         temp1 = temp1->next;
-        Node *temp2 = temp1->next;
-        temp1->next = temp2->next;
-        delete temp2;
     }
+    Node *temp2 = temp1->next;
+    temp1->next = temp2->next;
+    delete temp2;
 }
 
 int main()
