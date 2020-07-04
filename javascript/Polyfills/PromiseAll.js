@@ -12,7 +12,7 @@ function allPromise(promises) {
       promise
         .then((data) => {
           // pushed in the array and increment count
-          promisedData.push(data);
+          promisedData[i] = data;
           settledCount++;
           // check the promise count and settledCount
           if (settledCount === promiseCount) {
