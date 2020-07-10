@@ -28,7 +28,7 @@ int main()
   cin >> arr.size;
   arr.A = new int[arr.size];
   arr.length = 0;
-  cout << "Enter numbers of numbers: " << endl;
+  cout << "Enter how many numbers numbers: " << endl;
   cin >> n;
   cout << "Enter the elements: " << endl;
   for (i = 0; i < n; i++)
