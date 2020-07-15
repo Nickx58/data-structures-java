@@ -88,6 +88,18 @@ bool checkSorted(int arr[], int size)
   return true;
 }
 
+int sortedInsert(int arr[], int size, int x)
+{
+  int i = size - 1;
+  while (i >= 0 && arr[i] > x)
+  {
+    arr[i + 1] = arr[i];
+    i--;
+  }
+  arr[i + 1] = x;
+  return size + 1;
+}
+
 int main()
 {
   int A[] = {2, 3, 24, 5, 6, 7, 11};
@@ -101,6 +113,8 @@ int main()
   cout << "Sum of Array is: " << sum(A, size) << endl;
   cout << "After reversing the Array" << endl;
   reverse(A, size);
+  display(A, size);
+  size = sortedInsert(A, size, 4);
   display(A, size);
   return 0;
 }
