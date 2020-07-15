@@ -76,6 +76,18 @@ int sum(int arr[], int size)
   return sum;
 }
 
+bool checkSorted(int arr[], int size)
+{
+  for (int i = 0; i < size; i++)
+  {
+    if (arr[i] > arr[i + 1])
+    {
+      return false;
+    }
+  }
+  return true;
+}
+
 int main()
 {
   int A[] = {2, 3, 24, 5, 6, 7, 11};
