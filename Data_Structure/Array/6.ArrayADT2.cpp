@@ -11,6 +11,18 @@ void display(int arr[], int size)
   cout << endl;
 }
 
+void reverse(int arr[], int size)
+{
+  int i = 0;
+  int j = size - 1;
+  while (i < j)
+  {
+    swap(arr[i], arr[j]);
+    i++;
+    j--;
+  }
+}
+
 int get(int arr[], int index, int size)
 {
   if (index >= 0 && index <= size)
@@ -75,5 +87,8 @@ int main()
   cout << "Max Element in the array is: " << getMax(A, size) << endl;
   cout << "Min Element in the array is: " << getMin(A, size) << endl;
   cout << "Sum of Array is: " << sum(A, size) << endl;
+  cout << "After reversing the Array" << endl;
+  reverse(A, size);
+  display(A, size);
   return 0;
 }
