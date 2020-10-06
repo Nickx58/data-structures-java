@@ -34,22 +34,21 @@ Node *insert(Node *root, int data)
   return root;
 }
 
-bool nodeSearch(Node *root, int data)
+bool searchNode(Node *root, int data)
 {
   if (root == NULL)
     return false;
-  else if (root->data == data)
+  if (root->data == data)
   {
     return true;
   }
-  else if (data <= root->data)
+  bool leftResp = searchNode(root->left, data);
+  if (leftResp)
   {
-    return nodeSearch(root->left, data);
+    return true;
   }
-  else
-  {
-    return nodeSearch(root->right, data);
-  }
+  bool rightResp = searchNode(root->right, data);
+  return rightResp;
 }
 
 int main()
@@ -61,7 +60,7 @@ int main()
   root = insert(root, 25);
   root = insert(root, 8);
   root = insert(root, 12);
-  if (nodeSearch(root, 10) != 0)
+  if (searchNode(root, 10) != 0)
   {
     cout << "Found in the binary tree" << endl;
   }
